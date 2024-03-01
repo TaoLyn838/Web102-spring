@@ -1,0 +1,10 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "workbench.colorTheme":"WebStorm Darcula Darker Theme V2", 
+    "editor.fontWeight": "bold",
+    "java.debug.settings.debugSupportOnDecompiledSource": "on",
+}

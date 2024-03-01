@@ -1,0 +1,65 @@
+#root {
+  margin: 0;
+  text-align: center;
+}
+
+div {
+  display: block;
+}
+
+.App {
+  margin-left: 60px;
+  margin-right: 60px;
+  color: black;
+}
+
+img {
+  width: 100%;
+  height: 40%;
+}
+
+.header h1 {
+  font-size: 4.2em;
+  color: rgb(17, 16, 16);
+  text-shadow: rgba(27, 4, 4, 0.243) 5px 0 10px;
+}
+
+button {
+  border-radius: 9px;
+  padding: 0.6em 1.2em;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #172e38;
+  color: #ffffff; 
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  color: #172e38;
+  background-color: white;
+  padding-bottom: 20px;
+  box-shadow: 10px 15px 25px #817c7c33;
+  font-size: medium;
+  backdrop-filter: blur(2px);
+  text-align: center;
+  margin-bottom: 30px;
+  height: 450px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+}
