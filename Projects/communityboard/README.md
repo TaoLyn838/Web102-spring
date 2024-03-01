@@ -25,7 +25,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-
+https://github.com/TaoLyn838/Web102-spring/assets/58400041/d2a6d9b3-6f07-4098-af0e-1781c56bfef4
 
 ## Notes
 
