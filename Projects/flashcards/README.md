@@ -23,6 +23,9 @@ The following **optional** features are implemented:
   - [x] *visual style implemented*
 
 ## Video Walkthrough
+Here's a walkthrough of implemented required features:
+
+https://github.com/TaoLyn838/Web102-spring/assets/58400041/361a676c-9c0d-43bb-9d59-bc94323cbd53
 
 ## Notes
 
