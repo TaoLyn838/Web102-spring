@@ -1,0 +1,48 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 2px #0000004d;
+    transform-style: preserve-3d;
+    font-weight: 700;
+    height: 250px;
+    cursor: pointer;
+    transition: .25s;
+    transform: perspective(1000px) rotateX(var(--rotate-X, 0));
+}
+
+.card.flipped {
+    --rotate-X: 180deg;
+}
+
+.front, .back {
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    backface-visibility: hidden; /* key! */
+}
+
+.card .back {
+  transform: rotateX(180deg);
+}
+
+.easy {
+    background-color: rgba(57, 199, 126, 0.608);
+}
+
+.medium {
+    background-color: rgba(255, 166, 0, 0.608);
+}
+
+.hard {
+    background-color: rgba(255, 0, 0, 0.608);
+}
+
+.card:hover {
+    box-shadow: 0 0 5px 2px #00000080;
+}
+
+.card {
+    padding: 2em;
+}
