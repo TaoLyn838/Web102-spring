@@ -31,5 +31,10 @@
 
 .sumbit-incorrect {
   border: 3px solid red;
+}
 
+.perviousCard,
+.nextCard,
+.shuffle-button {
+  margin: 1px;
 }
