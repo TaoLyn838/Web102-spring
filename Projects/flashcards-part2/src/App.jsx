@@ -8,6 +8,7 @@ function App() {
   const [flashcards, setFlashcards] = useState(machineLearningFlashcards)
   const [currIndex, setCurrIndex] = useState(0);
   const [answer, setAnswer] = useState('')
+  const [sumbitStatus, setSumbitStatus] = useState('')
   const [currStreak, setcurrStreak] = useState(0)
   const [longestStreak, setLongestStreak] = useState(0)
 
@@ -18,10 +19,12 @@ function App() {
   const goNextCard = () => {
     setCurrIndex((currIdx) => 
     currIdx % (flashcards.length - 1) + 1)
+    setSumbitStatus('')
   }
 
   const goPerviousCard = () => {
     setCurrIndex((currIdx) => currIdx - 1 <= 0 ? 0 : currIdx - 1)
+    setSumbitStatus('')
   }
 
   const handleChange = (e) => {
@@ -30,11 +33,14 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const isCorrectAnswer = answer.toLowerCase() === currCard.answer.toLowerCase()
     setcurrStreak((score) => 
-    answer.toLowerCase() === currCard.answer.toLowerCase() ? score + 1 : score <= 0 ? 0 : score - 1)
+    isCorrectAnswer ? score + 1 : score <= 0 ? 0 : score - 1)
 
     setLongestStreak((bestScore) => 
     bestScore < currStreak ? currStreak : bestScore)
+
+    setSumbitStatus(isCorrectAnswer ? 'sumbit-correct' : 'sumbit-incorrect')
 
     setAnswer('')
   }
@@ -71,6 +77,7 @@ function App() {
       <form className='guessing' onSubmit={handleSubmit}>
         Guess the answer here:
         <input 
+        className={`guessing-input ${sumbitStatus}`}
         id={inputID} 
         type='text' 
         name={`question ${currIndex}`}

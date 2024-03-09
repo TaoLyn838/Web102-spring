@@ -4,3 +4,32 @@
   padding: 2rem;
   text-align: center;
 }
+
+.submit-button {
+    /* width: 100px;
+    height: 35px; */
+    font-size: 11px;
+    margin-left: 6px;
+    margin-top: 2px;
+}
+
+.guessing {
+    font-weight: bolder;
+}
+
+.guessing-input {
+    margin-left: 6px;
+    margin-top: 2px;
+    font-size: 11px;
+    height: 20px;
+    border-radius: 6px;
+}
+
+.sumbit-correct {
+  border: 3px solid green;
+}
+
+.sumbit-incorrect {
+  border: 3px solid red;
+
+}
