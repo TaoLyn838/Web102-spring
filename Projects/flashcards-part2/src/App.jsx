@@ -15,7 +15,6 @@ function App() {
   const currCard = flashcards[currIndex]
   const inputID = useId()
 
-
   const goNextCard = () => {
     setCurrIndex((currIdx) => 
     currIdx % (flashcards.length - 1) + 1)
@@ -34,11 +33,15 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault()
     const isCorrectAnswer = answer.toLowerCase() === currCard.answer.toLowerCase()
-    setcurrStreak((score) => 
-    isCorrectAnswer ? score + 1 : score <= 0 ? 0 : score - 1)
 
-    setLongestStreak((bestScore) => 
-    bestScore < currStreak ? currStreak : bestScore)
+    setcurrStreak((score) => {
+      const currScore = isCorrectAnswer ? score + 1 : score <= 0 ? 0 : score - 1
+
+      setLongestStreak((bestScore) => bestScore < currScore ? currScore : bestScore)
+
+      return currScore
+
+    })
 
     setSumbitStatus(isCorrectAnswer ? 'sumbit-correct' : 'sumbit-incorrect')
 
