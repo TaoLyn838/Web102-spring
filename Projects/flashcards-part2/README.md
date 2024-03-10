@@ -30,6 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+https://github.com/TaoLyn838/Web102-spring/assets/58400041/d1073fe3-57c3-441c-b60a-68b66c6832e2
 
 ## Notes
 
