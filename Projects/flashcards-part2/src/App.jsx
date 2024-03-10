@@ -48,10 +48,6 @@ function App() {
     setAnswer('')
   }
 
-  const shuffleCards = () => {
-    setFlashcards((cards) => fisherYatesSuffle(cards))
-  }
-
   function fisherYatesSuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * i + 1)
@@ -91,12 +87,12 @@ function App() {
       </form>
       <br />
       <div>
-      <button type='back' className='perviousCard' onClick={goPerviousCard} 
+      <button className='perviousCard' onClick={goPerviousCard} 
       disabled={currIndex === 0}>{`<-`}</button>
-      <button type='next' className='nextCard' onClick={goNextCard}>
+      <button className='nextCard' onClick={goNextCard}>
           {`->`}
       </button>
-      <button type='shuffle' className='shuffle-button' onClick={shuffleCards}>
+      <button className='shuffle-button' onClick={ () => setFlashcards(fisherYatesSuffle(flashcards)) }>
         Shuffle cards
       </button>
     </div>
