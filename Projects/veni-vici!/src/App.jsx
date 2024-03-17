@@ -1,33 +1,175 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
+const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY
+import axios from 'axios'
+import SideNav from './components/SideNav'
+import HistorySidebar from './components/HistorySidebar'
+import DiscoverContainer from './components/DiscoverContainer'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [catsData, setCatsData] = useState([])
+  const [discoverHistory, setDiscoverHistory] = useState([])
+  const [cat, setCat] = useState({
+    id: '',
+    name: '',
+    description: '',
+    wikipedia_url: '',
+    img_url: '', // addition of cat img url
+  })
+  const [attributeBtn, setAttributeBtn] = useState({
+    origin: '',
+    imperial: '',
+    metric: '',
+    life_span: '',
+    temperaments: [],
+  })
+  const [banList, setBanList] = useState({
+    origin: [],
+    imperial: [],
+    metric: [],
+    life_span: [],
+    temperaments: [],
+  })
+
+  useEffect(() => {
+    const callAPI = async () => {
+      const reponse = await axios.get(makeQuery('breeds'))
+      const data = reponse.data
+      if (data == null) {
+        alert("Oops! Something went wrong with that query, let's try again!")
+      } else {
+        setCatsData(data)
+      }
+    }
+    callAPI().catch(console.error)
+  }, [])
+
+  useEffect(() => {
+    const updatedAttributeBtn = { ...attributeBtn }
+    for (const [key, value] of Object.entries(updatedAttributeBtn)) {
+      if (Array.isArray(value)) {
+        const updatedTemperaments = value.filter(
+          (temperaments) => !banList[key].includes(temperaments)
+        )
+        if (updatedTemperaments.length === 0) {
+          delete updatedAttributeBtn[key]
+        } else {
+          updatedAttributeBtn[key] = updatedTemperaments
+        }
+      } else {
+        if (banList[key].includes(String(value))) {
+          delete updatedAttributeBtn[key]
+        }
+      }
+    }
+    setAttributeBtn(updatedAttributeBtn)
+  }, [banList])
+
+  const makeQuery = (entity, id = null) => {
+    return id
+      ? `https://api.thecatapi.com/v1/${entity}/search?id=${id}W&
+    api_key=${ACCESS_KEY}`
+      : `https://api.thecatapi.com/v1/${entity}`
+  }
+
+  const handleQuery = async () => {
+    const fetchRandomCat = catsData[Math.floor(Math.random() * catsData.length)]
+    const catImg = await axios
+      .get(makeQuery('images', fetchRandomCat.reference_image_id))
+      .catch(console.error)
+    const {
+      id,
+      name,
+      description,
+      origin,
+      temperament,
+      weight,
+      life_span,
+      wikipedia_url,
+    } = fetchRandomCat
+
+    setCat({
+      id,
+      name,
+      description,
+      wikipedia_url,
+      img_url: catImg.data[0].url,
+    })
+
+    const catAttributes = {
+      origin,
+      imperial: weight.imperial,
+      metric: weight.metric,
+      life_span,
+      temperaments: temperament.split(', '),
+    }
+
+    setAttributeBtn(filterCats(catAttributes))
+
+    setDiscoverHistory((cats) => {
+      return cat.id === '' ? [] : [...cats, cat]
+    })
+  }
+
+  const filterCats = (catAttributes) => {
+    for (const [key, value] of Object.entries(catAttributes)) {
+      if (key !== 'temperaments') {
+        if (banList[key].includes(value)) {
+          delete catAttributes[key]
+        }
+      } else {
+        catAttributes[key] = value.filter(
+          (temperaments) => !banList[key].includes(temperaments)
+        )
+        if (value.length === 0) {
+          delete catAttributes[key]
+        }
+      }
+    }
+    return catAttributes
+  }
+
+  function addAttributeToBanList(key, value) {
+    setBanList((prevBanList) => ({
+      ...prevBanList,
+      [key]: [...prevBanList[key], value],
+    }))
+  }
+
+  function removeAttributeToBanList(e) {
+    const key = e.target.name
+    const value = e.target.value
+    setBanList((prevBanList) => ({
+      ...prevBanList,
+      [key]: prevBanList[key].filter((item) => item !== value),
+    }))
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <div className="whole-page">
+        <h1 className="title">Catpath</h1>
+        <h3>
+          {' '}
+          Uncover a world of enchanting felines, each more captivating than the
+          last, in your quest to find the cat of your dreams!
+        </h3>
+        <br />
+        <DiscoverContainer
+          cat={cat}
+          attributeBtn={attributeBtn}
+          addAttributeToBanList={addAttributeToBanList}
+        />
+        <br />
+        <button type="submit" onClick={handleQuery}>
+          🔀 Discover!
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <HistorySidebar discoverHistory={discoverHistory} />
+      <SideNav
+        banList={banList}
+        removeAttributeToBanList={removeAttributeToBanList}
+      />
     </>
   )
 }
