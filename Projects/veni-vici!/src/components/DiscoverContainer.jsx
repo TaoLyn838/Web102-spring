@@ -32,7 +32,7 @@ const DiscoverContainer = ({ cat, attributeBtn, addAttributeToBanList }) => {
         </div>
       ) : (
         <div className="listing-container">
-          <h2>{cat.name}</h2>
+          <h2 className="cat-name">{cat.name}</h2>
           <AttributeButtons
             attributeBtn={attributeBtn}
             addAttributeToBanList={addAttributeToBanList}

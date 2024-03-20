@@ -12,8 +12,8 @@ const HistorySidebar = ({ discoverHistory }) => {
             discoverHistory.map((cat) => (
               <li key={cat.id}>
                 <img
+                  className="history-img"
                   src={cat.img_url}
-                  style={{ width: `75px`, height: `75px` }}
                   onMouseEnter={() => setShowDescription(cat.id)}
                   onMouseLeave={() => setShowDescription(null)}
                 />

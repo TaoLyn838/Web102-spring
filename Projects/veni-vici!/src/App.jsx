@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import './components/Sidebars.css'
+import './components/Buttons.css'
 const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY
 import axios from 'axios'
 import SideNav from './components/SideNav'
@@ -148,20 +150,19 @@ function App() {
   return (
     <>
       <div className="whole-page">
-        <h1 className="title">Catpath</h1>
-        <h3>
+        <h1 className="App-name">Catpath</h1>
+        <h3 className="start-detail">
           {' '}
           Uncover a world of enchanting felines, each more captivating than the
           last, in your quest to find the cat of your dreams!
         </h3>
-        <br />
         <DiscoverContainer
           cat={cat}
           attributeBtn={attributeBtn}
           addAttributeToBanList={addAttributeToBanList}
         />
         <br />
-        <button type="submit" onClick={handleQuery}>
+        <button className="discover-btn" type="submit" onClick={handleQuery}>
           🔀 Discover!
         </button>
       </div>
