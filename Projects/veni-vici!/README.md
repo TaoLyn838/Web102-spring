@@ -31,6 +31,10 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
+
+https://github.com/TaoLyn838/Web102-spring/assets/58400041/efb46854-548c-4539-a5c4-3ff1593f58fa
+
+
 ## Notes
 
 background image: [ちいかわ 💫 アニメ火金](https://twitter.com/ngnchiikawa)
