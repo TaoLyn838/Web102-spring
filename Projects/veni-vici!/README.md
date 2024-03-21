@@ -36,8 +36,9 @@ https://github.com/TaoLyn838/Web102-spring/assets/58400041/efb46854-548c-4539-a5
 
 
 ## Notes
-
-**background image support**: [ちいかわ 💫 アニメ火金](https://twitter.com/ngnchiikawa)
+### Reference:
+**API**:[TheCatAPI](https://thecatapi.com/)
+**background image**: [ちいかわ 💫 アニメ火金](https://twitter.com/ngnchiikawa)
 
 ## License
 
