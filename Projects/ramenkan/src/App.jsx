@@ -65,6 +65,7 @@ function App() {
       <h1 className="font-mono" style={{ fontSize: '44px' }}>
         Ramenkan
       </h1>
+      <br />
       <RamenCard
         ramenShops={ramenShops}
         currPhoto={currPhoto}
