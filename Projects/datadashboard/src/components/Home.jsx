@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-// import weather from '../data.json'
 import { WeatherCards } from './HomeComponents/WeatherCards'
 import { WeatherCharts } from './HomeComponents/WeatherCharts'
 import './Home.css'
