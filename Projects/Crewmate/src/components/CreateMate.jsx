@@ -32,17 +32,6 @@ const CreateMate = () => {
     typeColor: '',
   })
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    let newCrewmate = {
-      ...crewmate,
-      [name]: value,
-    }
-    if (name === 'type') {
-      newCrewmate.typeColor = types[value] // Use the `types` object to set the color
-    }
-    setCrewmate(newCrewmate)
-  }
   const createCrewmate = async (event) => {
     event.preventDefault()
 
@@ -64,11 +53,83 @@ const CreateMate = () => {
 
     if (error) {
       console.error('Error inserting data: ', error)
-      alert('There was an error inserting the data. Please try again.') // Alert the user
+      alert('There was an error inserting the data. Please try again.')
     } else {
       console.log('Inserted data: ', data)
-      window.location = '/crewmateGallery' // Assuming '/gremateGallery' was a typo
+      window.location = '/crewmateGallery'
     }
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target
+    let newCrewmate = {
+      ...crewmate,
+      [name]: value,
+    }
+    if (name === 'type') {
+      newCrewmate.typeColor = types[value] // Use the `types` object to set the color
+    }
+    setCrewmate(newCrewmate)
+  }
+
+  const NameLabel = () => {
+    return (
+      <div className="mini-container">
+        <label>
+          <h3>Name:</h3>
+        </label>
+        <input
+          type="text"
+          name="name"
+          value={crewmate.name}
+          placeholder="Enter your name"
+          onChange={handleChange}
+        />
+      </div>
+    )
+  }
+
+  const WeaponLabel = () => {
+    return (
+      <div className="mini-container">
+        <label>
+          <h3>Weapon</h3>
+        </label>
+        <select name="weapon" value={crewmate.weapon} onChange={handleChange}>
+          {weaponTypes.map((weapon, index) => (
+            <option key={index} value={weapon}>
+              {weapon}
+            </option>
+          ))}
+        </select>
+      </div>
+    )
+  }
+
+  const WeaponTypeLabel = () => {
+    return (
+      <div className="mini-container">
+        <label>
+          <h3>Choose a type:</h3>
+        </label>
+        <ul className="character-type">
+          {Object.keys(types).map((type) => (
+            <li key={type}>
+              <label className={`type-` + types[type]}>
+                <input
+                  type="radio"
+                  name="type"
+                  value={type}
+                  checked={crewmate.type === type}
+                  onChange={handleChange}
+                />
+                {type}
+              </label>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
   }
 
   return (
@@ -79,51 +140,9 @@ const CreateMate = () => {
         style={{ width: 'auto', height: '100px' }}
       />
       <form className="form-container">
-        <div className="mini-container">
-          <label>
-            <h3>Name:</h3>
-          </label>
-          <input
-            type="text"
-            name="name"
-            value={crewmate.name}
-            placeholder="Enter your name"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mini-container">
-          <label>
-            <h3>Weapon</h3>
-          </label>
-          <select name="weapon" value={crewmate.weapon} onChange={handleChange}>
-            {weaponTypes.map((weapon, index) => (
-              <option key={index} value={weapon}>
-                {weapon}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="mini-container">
-          <label>
-            <h3>Choose a type:</h3>
-          </label>
-          <ul className="character-type">
-            {Object.keys(types).map((type) => (
-              <li key={type}>
-                <label className={`type-` + types[type]}>
-                  <input
-                    type="radio"
-                    name="type"
-                    value={type}
-                    checked={crewmate.type === type}
-                    onChange={handleChange}
-                  />
-                  {type}
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <NameLabel />
+        <WeaponLabel />
+        <WeaponTypeLabel />
       </form>
       <button type="submit" onClick={createCrewmate}>
         Create crewmate!
