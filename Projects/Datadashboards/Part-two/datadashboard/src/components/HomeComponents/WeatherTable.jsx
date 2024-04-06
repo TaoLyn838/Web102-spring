@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { WeatherSearchBar } from './WeatherSearchBar'
+import { Link } from 'react-router-dom'
+import { WeatherIcon } from './WeathIcon'
 
 export const WeatherTable = ({
   weather,
@@ -9,36 +11,13 @@ export const WeatherTable = ({
   formatDate,
 }) => {
   const [filteredData, setFilteredData] = useState(weather.data)
-  const WeatherIcon = ({ iconCode }) => {
-    const [Icon, setIcon] = useState(null)
-
-    useEffect(() => {
-      // Dynamically import the icon based on the provided iconCode
-      import(`../../assets/icons/${iconCode}.png`)
-        .then((icon) => {
-          setIcon(icon.default)
-        })
-        .catch((error) => {
-          console.error('Failed to load the icon:', error)
-        })
-    }, [iconCode])
-
-    // Render the icon if it's available
-    return Icon ? (
-      <img
-        src={Icon}
-        alt={`Weather icon for ${iconCode}`}
-        style={{ width: '70px', height: '70px' }}
-      />
-    ) : null
-  }
 
   const WeatherList = () => {
     return (
-      <div class="flex flex-col">
-        <div class="-m-1.5 overflow-x-auto">
-          <div class="p-1.5 min-w-full inline-block align-middle">
-            <div class="overflow-hidden">
+      <div className="flex flex-col">
+        <div className="-m-1.5 overflow-x-auto">
+          <div className="p-1.5 min-w-full inline-block align-middle">
+            <div className="overflow-hidden">
               {filteredData && filteredData.length > 0 ? (
                 <table className="weather-table">
                   <thead>
@@ -47,7 +26,7 @@ export const WeatherTable = ({
                       <th className="weather-list-th">Temperature</th>
                       <th className="weather-list-th">Weather</th>
                       <th className="weather-list-th">Phase</th>
-                      {/* <th>Details</th> */}
+                      <th>Details</th>
                     </tr>
                   </thead>
                   {filteredData.map((item) => {
@@ -61,18 +40,20 @@ export const WeatherTable = ({
                           <td className="weather-list-td">{`${celsiusToFahrenheit(
                             temp
                           )} °F`}</td>
-                          <td>
+                          <td className="weather-list-td">
                             <WeatherIcon iconCode={weather.icon} />
                           </td>
-                          <td>{moonPhaseEmoji(moon_phase)}</td>
+                          <td className="weather-list-td">
+                            {moonPhaseEmoji(moon_phase)}
+                          </td>
                           <td>
-                            {/* <Link
-                        className="weather-link"
-                        to={`/weatherInfo/${datetime}`}
-                        state={{ weather: item }}
-                      >
-                        📑
-                      </Link> */}
+                            <Link
+                              className="weather-link"
+                              to={`/weatherDetail/${datetime}`}
+                              state={{ weather: item }}
+                            >
+                              📑
+                            </Link>
                           </td>
                         </tr>
                       </tbody>
