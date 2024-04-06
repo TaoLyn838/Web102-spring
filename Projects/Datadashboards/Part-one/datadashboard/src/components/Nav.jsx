@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import './Nav.css'
 
 export const Nav = () => {
@@ -77,6 +77,7 @@ export const Nav = () => {
             </li>
           </ul>
         </nav>
+        <Outlet />
       </div>
     </div>
   )
