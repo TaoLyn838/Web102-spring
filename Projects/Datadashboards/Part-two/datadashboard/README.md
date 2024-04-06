@@ -27,6 +27,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+
+https://github.com/TaoLyn838/Web102-spring/assets/58400041/de47dff8-89d0-4430-8161-ef4f8e76cd25
+
+
 ## Notes
 
 Describe any challenges encountered while building the app.
