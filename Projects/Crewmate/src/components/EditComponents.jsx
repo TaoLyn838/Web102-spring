@@ -1,5 +1,8 @@
 import { supabase } from '../client'
 import { useState } from 'react'
+import { NameLabel } from './Labels/NameLabel'
+import { WeaponLabel } from './Labels/WeaponLabel'
+import { WeaponTypeLabel } from './Labels/WeaponTypeLabel'
 
 const EditComponents = ({ id }) => {
   const weaponTypes = [
@@ -21,7 +24,7 @@ const EditComponents = ({ id }) => {
     Mecha: 'blue',
     Biologic: 'yellow',
     Quantum: 'purple',
-    Imaginary: 'light-yellow',
+    Imaginary: 'lightYellow',
   }
 
   const [crewmate, setCrewmate] = useState({
@@ -38,7 +41,7 @@ const EditComponents = ({ id }) => {
       [name]: value,
     }
     if (name === 'type') {
-      newCrewmate.typeColor = types[value] // Use the `types` object to set the color
+      newCrewmate.typeColor = types[value]
     }
     setCrewmate(newCrewmate)
   }
@@ -79,58 +82,24 @@ const EditComponents = ({ id }) => {
       alert('Failed to delete the crewmate. Please try again.')
     } else {
       alert('Crewmate has been successfully deleted!')
-      window.location = '/crewmateGallery' // Assuming '/gremateGallery' was a typo
+      window.location = '/crewmateGallery'
     }
   }
 
   return (
     <div>
       <form className="form-container">
-        <div className="mini-container">
-          <label>
-            <h3>Name:</h3>
-          </label>
-          <input
-            type="text"
-            name="name"
-            value={crewmate.name}
-            placeholder="Enter your name"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="mini-container">
-          <label>
-            <h3>Weapon</h3>
-          </label>
-          <select name="weapon" value={crewmate.weapon} onChange={handleChange}>
-            {weaponTypes.map((weapon, index) => (
-              <option key={index} value={weapon}>
-                {weapon}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="mini-container">
-          <label>
-            <h3>Choose a type:</h3>
-          </label>
-          <ul className="character-type">
-            {Object.keys(types).map((type) => (
-              <li key={type}>
-                <label className={`type-` + types[type]}>
-                  <input
-                    type="radio"
-                    name="type"
-                    value={type}
-                    checked={crewmate.type === type}
-                    onChange={handleChange}
-                  />
-                  {type}
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <NameLabel username={crewmate.name} handleChange={handleChange} />
+        <WeaponLabel
+          userWeapon={crewmate.weapon}
+          weaponTypes={weaponTypes}
+          handleChange={handleChange}
+        />
+        <WeaponTypeLabel
+          types={types}
+          userType={crewmate.type}
+          handleChange={handleChange}
+        />
       </form>
       <div>
         <button onClick={updateCrewmate}>Update Crewmate</button>

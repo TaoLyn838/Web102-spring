@@ -1,9 +1,9 @@
-import Card from './Card'
 import { supabase } from '../client'
 import { useEffect, useState } from 'react'
-import './GremateGallery.css'
+import './CrewmateGallery.css'
+import { CrewmateCard } from './CrewmateCard'
 
-const CremateGallery = () => {
+const CrewmateGallery = () => {
   const [crewmates, setCrewmates] = useState(null)
 
   useEffect(() => {
@@ -16,14 +16,15 @@ const CremateGallery = () => {
     }
     fetchCrewInfo()
   }, [])
+
   return (
-    <div>
+    <div className="gallery-page">
       <h1>Your Crewmate Gallery!</h1>
       <div className="crewmate-container">
         {crewmates ? (
           crewmates.length > 0 &&
           crewmates.map((crewmate, index) => (
-            <Card key={index} player={crewmate} />
+            <CrewmateCard key={index} crewmate={crewmate} />
           ))
         ) : (
           <></>
@@ -32,4 +33,4 @@ const CremateGallery = () => {
     </div>
   )
 }
-export default CremateGallery
+export default CrewmateGallery

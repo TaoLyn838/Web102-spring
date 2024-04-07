@@ -2,10 +2,10 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <div className="whole-page">
-      <div className="home-page">
-        <h1>Welcome to the Crewmate Creator!</h1>
-        <h3>
+    <div className="home-page">
+      <div className="grid grid-cols-1 gap-4">
+        <h1 className="title">Welcome to the Crewmate Creator!</h1>
+        <h3 className="discription">
           Here is where you can create your very own set of crewmates before
           sending them off into space!
         </h3>

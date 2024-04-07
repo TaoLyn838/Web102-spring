@@ -1,7 +1,11 @@
-.home-page {
-  margin: 5%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title {
+  @apply text-4xl dark:text-white font-extrabold font-mono;
 }
-.welcome-image {
-  width: 500px;
-  height: auto;
+
+.discription {
+  @apply text-2xl dark:text-gray-300  font-mono;
 }

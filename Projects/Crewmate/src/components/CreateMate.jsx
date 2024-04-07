@@ -1,6 +1,9 @@
 import './CreateMate.css'
 import { useState } from 'react'
 import { supabase } from '../client'
+import { NameLabel } from './Labels/NameLabel'
+import { WeaponLabel } from './Labels/WeaponLabel'
+import { WeaponTypeLabel } from './Labels/WeaponTypeLabel'
 
 const CreateMate = () => {
   const weaponTypes = [
@@ -67,82 +70,30 @@ const CreateMate = () => {
       [name]: value,
     }
     if (name === 'type') {
-      newCrewmate.typeColor = types[value] // Use the `types` object to set the color
+      newCrewmate.typeColor = types[value]
     }
     setCrewmate(newCrewmate)
   }
 
-  const NameLabel = () => {
-    return (
-      <div className="mini-container">
-        <label>
-          <h3>Name:</h3>
-        </label>
-        <input
-          type="text"
-          name="name"
-          value={crewmate.name}
-          placeholder="Enter your name"
-          onChange={handleChange}
-        />
-      </div>
-    )
-  }
-
-  const WeaponLabel = () => {
-    return (
-      <div className="mini-container">
-        <label>
-          <h3>Weapon</h3>
-        </label>
-        <select name="weapon" value={crewmate.weapon} onChange={handleChange}>
-          {weaponTypes.map((weapon, index) => (
-            <option key={index} value={weapon}>
-              {weapon}
-            </option>
-          ))}
-        </select>
-      </div>
-    )
-  }
-
-  const WeaponTypeLabel = () => {
-    return (
-      <div className="mini-container">
-        <label>
-          <h3>Choose a type:</h3>
-        </label>
-        <ul className="character-type">
-          {Object.keys(types).map((type) => (
-            <li key={type}>
-              <label className={`type-` + types[type]}>
-                <input
-                  type="radio"
-                  name="type"
-                  value={type}
-                  checked={crewmate.type === type}
-                  onChange={handleChange}
-                />
-                {type}
-              </label>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
-
   return (
-    <div>
+    <div className="create-crewmate-page">
       <h1>Create a New Crewmate</h1>
       <img
         src="https://shimmering-stardust-c75334.netlify.app/assets/crewmates.43d07b24.png"
         style={{ width: 'auto', height: '100px' }}
       />
       <form className="form-container">
-        <NameLabel />
-        <WeaponLabel />
-        <WeaponTypeLabel />
+        <NameLabel username={crewmate.name} handleChange={handleChange} />
+        <WeaponLabel
+          userWeapon={crewmate.weapon}
+          weaponTypes={weaponTypes}
+          handleChange={handleChange}
+        />
+        <WeaponTypeLabel
+          types={types}
+          userType={crewmate.type}
+          handleChange={handleChange}
+        />
       </form>
       <button type="submit" onClick={createCrewmate}>
         Create crewmate!
