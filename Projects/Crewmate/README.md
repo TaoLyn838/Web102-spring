@@ -19,9 +19,9 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] A crewmate can be given a category upon creation which restricts their attributes
-- [ ] The site displays summary statistics about a user's crew on their crew page
-- [ ] The site displays a custom "success" metric about a user's crew which changes the look of the crewmate list
+- [x] A crewmate can be given a category upon creation which restricts their attributes
+- [x] The site displays summary statistics about a user's crew on their crew page
+- [x] The site displays a custom "success" metric about a user's crew which changes the look of the crewmate list
 
 The following **additional** features are implemented:
 
@@ -29,7 +29,9 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-https://github.com/TaoLyn838/WEB102/assets/58400041/03578a4b-b3ac-4fd5-8bdf-a0190e018366
+## Notes
+
+Describe any challenges encountered while building the app.
 
 ## License
 
