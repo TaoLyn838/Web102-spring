@@ -24,7 +24,7 @@ const EditComponents = ({ id }) => {
     Mecha: 'blue',
     Biologic: 'yellow',
     Quantum: 'purple',
-    Imaginary: 'lightYellow',
+    Imaginary: 'light-yellow',
   }
 
   const [crewmate, setCrewmate] = useState({
