@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.crewmate-container {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.crew-card-pink {
+  @apply flex flex-col bg-fuchsia-300 border shadow-sm rounded-xl border-fuchsia-700 shadow-fuchsia-700/70;
+}
+.crew-card-blue {
+  @apply flex flex-col bg-blue-300 border shadow-sm rounded-xl border-blue-700 shadow-blue-700/70;
+}
+.crew-card-yellow {
+  @apply flex flex-col bg-orange-300 border shadow-sm rounded-xl border-orange-700 shadow-orange-700/70;
+}
+.crew-card-purple {
+  @apply flex flex-col bg-indigo-400 border shadow-sm rounded-xl border-indigo-700 shadow-indigo-700/70;
+}
+.crew-card-light-yellow {
+  @apply flex flex-col bg-yellow-100 border shadow-sm rounded-xl border-yellow-700 shadow-yellow-700/70;
+}
+
+.crew-card-name {
+  @apply text-4xl font-bold text-gray-800 shadow-sm;
+}
+
+.crew-card-type {
+  @apply text-lg font-mono text-gray-700 shadow-sm font-semibold;
+}
+
+.crew-card-weapon {
+  @apply text-lg font-serif text-gray-700 shadow-sm font-semibold;
+}

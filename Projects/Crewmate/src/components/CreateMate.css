@@ -1,0 +1,40 @@
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: auto;
+  position: relative;
+  font-size: larger;
+}
+
+.mini-container {
+  @apply container mx-auto px-4;
+}
+
+.label-title {
+  @apply flex block text-sm font-bold mb-2 dark:text-gray-400 uppercase;
+}
+
+.weapon-label-select {
+  @apply sm:p-5 p-4 pe-9 block bg-gray-900 border-gray-200 rounded-lg text-sm font-serif font-semibold focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600;
+}
+
+.name-label-input {
+  @apply py-3 px-4 block bg-gray-900 border-gray-200 rounded-lg text-sm font-bold focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600;
+}
+
+.type-Psychic-color {
+  @apply ms-3 block w-full text-sm font-mono text-fuchsia-500;
+}
+.type-Mecha-color {
+  @apply ms-3 block w-full text-sm font-mono text-blue-500;
+}
+.type-Biologic-color {
+  @apply flex flex-col ms-3 block w-full text-sm font-mono text-orange-300;
+}
+.type-Quantum-color {
+  @apply flex flex-col ms-3 block w-full text-sm font-mono text-indigo-700;
+}
+.type-Imaginary-color {
+  @apply flex flex-col ms-3 block w-full text-sm font-mono text-yellow-100;
+}

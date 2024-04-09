@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+  @apply fixed top-0 start-0 bottom-0 z-[60] w-64;
+}
+
+.navbar-link {
+  @apply flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md;
+}
