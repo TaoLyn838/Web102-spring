@@ -11,12 +11,12 @@ export const CrewmateCard = ({ crewmate }) => {
           alt="Image Description"
         />
         <div className="p-4 md:p-5">
-          <h3 className="crew-card-h3">{crewmate.name}</h3>
-          <h3 className="crew-card-h3">{crewmate.type}</h3>
-          <h3 className="crew-card-h3">{crewmate.weapon}</h3>
+          <h3 className="crew-card-name">{crewmate.name}</h3>
+          <h3 className="crew-card-type">{crewmate.type}</h3>
+          <h3 className="crew-card-weapon">{crewmate.weapon}</h3>
 
           <Link
-            className="crew-card-btn"
+            className="crewmate-btn"
             to={`/edit/${crewmate.id}`}
             state={{ crewData: crewmate }}
             id="link"

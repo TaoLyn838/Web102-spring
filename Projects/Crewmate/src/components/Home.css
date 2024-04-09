@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.title {
-  @apply text-4xl dark:text-white font-extrabold font-mono;
-}
-
 .discription {
-  @apply text-2xl dark:text-gray-300  font-mono;
+  @apply text-gray-800 dark:text-white;
 }

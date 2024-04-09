@@ -69,6 +69,7 @@ const CreateMate = () => {
       ...crewmate,
       [name]: value,
     }
+    console.log(value)
     if (name === 'type') {
       newCrewmate.typeColor = types[value]
     }
@@ -77,27 +78,40 @@ const CreateMate = () => {
 
   return (
     <div className="create-crewmate-page">
-      <h1>Create a New Crewmate</h1>
-      <img
-        src="https://shimmering-stardust-c75334.netlify.app/assets/crewmates.43d07b24.png"
-        style={{ width: 'auto', height: '100px' }}
-      />
-      <form className="form-container">
-        <NameLabel username={crewmate.name} handleChange={handleChange} />
-        <WeaponLabel
-          userWeapon={crewmate.weapon}
-          weaponTypes={weaponTypes}
-          handleChange={handleChange}
+      <div className="grid grid-cols-7 gap-6">
+        <div className="col-start-1 col-end-8">
+          <h1 className="title">Create a New Crewmate</h1>
+        </div>
+        <img
+          className="col-start-4 col-end-8"
+          src="https://shimmering-stardust-c75334.netlify.app/assets/crewmates.43d07b24.png"
+          style={{ width: '100', height: '100px' }}
         />
-        <WeaponTypeLabel
-          types={types}
-          userType={crewmate.type}
-          handleChange={handleChange}
-        />
+      </div>
+      <form className="grid grid-cols-3">
+        <div>
+          <NameLabel username={crewmate.name} handleChange={handleChange} />
+        </div>
+        <div>
+          <WeaponLabel
+            userWeapon={crewmate.weapon}
+            weaponTypes={weaponTypes}
+            handleChange={handleChange}
+          />
+        </div>
+        <div>
+          <WeaponTypeLabel
+            types={types}
+            userType={crewmate.type}
+            handleChange={handleChange}
+          />
+        </div>
       </form>
-      <button type="submit" onClick={createCrewmate}>
-        Create crewmate!
-      </button>
+      <div className="col-start-1 col-end-7">
+        <button className="crewmate-btn" type="submit" onClick={createCrewmate}>
+          Create crewmate!
+        </button>
+      </div>
     </div>
   )
 }

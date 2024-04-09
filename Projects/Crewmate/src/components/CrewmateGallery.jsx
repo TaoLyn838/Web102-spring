@@ -19,16 +19,18 @@ const CrewmateGallery = () => {
 
   return (
     <div className="gallery-page">
-      <h1>Your Crewmate Gallery!</h1>
-      <div className="crewmate-container">
-        {crewmates ? (
-          crewmates.length > 0 &&
-          crewmates.map((crewmate, index) => (
-            <CrewmateCard key={index} crewmate={crewmate} />
-          ))
-        ) : (
-          <></>
-        )}
+      <div className="grid grid-cols-1 gap-10">
+        <h1 className="title">Your Crewmate Gallery!</h1>
+        <div className="crewmate-container">
+          {crewmates ? (
+            crewmates.length > 0 &&
+            crewmates.map((crewmate, index) => (
+              <CrewmateCard key={index} crewmate={crewmate} />
+            ))
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </div>
   )

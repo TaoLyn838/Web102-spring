@@ -29,14 +29,11 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-
-
 https://github.com/TaoLyn838/WEB102/assets/58400041/03578a4b-b3ac-4fd5-8bdf-a0190e018366
-
 
 ## License
 
-    Copyright [2023] [Chengtao Lin]
+    Copyright [2024] [Chengtao Lin]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

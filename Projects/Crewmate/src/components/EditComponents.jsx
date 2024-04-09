@@ -88,7 +88,7 @@ const EditComponents = ({ id }) => {
 
   return (
     <div>
-      <form className="form-container">
+      <form className="form-container gap-4">
         <NameLabel username={crewmate.name} handleChange={handleChange} />
         <WeaponLabel
           userWeapon={crewmate.weapon}
@@ -101,10 +101,20 @@ const EditComponents = ({ id }) => {
           handleChange={handleChange}
         />
       </form>
-      <div>
-        <button onClick={updateCrewmate}>Update Crewmate</button>
-        &nbsp; &nbsp;
-        <button onClick={deleteCrewmate}>Delete Crewmate</button>
+      <br />
+      <div className="grid grid-cols-5 gap-2">
+        <button
+          className="crewmate-btn col-start-2 col-end-5"
+          onClick={updateCrewmate}
+        >
+          Update Crewmate
+        </button>
+        <button
+          className="crewmate-btn col-start-2 col-end-5"
+          onClick={deleteCrewmate}
+        >
+          Delete Crewmate
+        </button>
       </div>
     </div>
   )
