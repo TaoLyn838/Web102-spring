@@ -1,0 +1,15 @@
+.navbar-header {
+  @apply bg-gray-900 text-white py-4 px-6 flex items-center justify-between;
+}
+
+.nav-sidebar {
+  @apply flex space-x-4;
+}
+
+.navbar-link {
+  @apply hover:text-gray-300;
+}
+
+.nvabar-title {
+  @apply text-xl font-bold mr-6;
+}

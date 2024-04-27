@@ -1,0 +1,13 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app-btn {
+  @apply px-5 py-2.5 text-sm font-medium text-center bg-sky-900 text-sky-100 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-sky-800;
+}
+
+.app-input {
+  @apply py-3 px-4 block w-full bg-white text-gray-900 border-gray-700 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500;
+}
