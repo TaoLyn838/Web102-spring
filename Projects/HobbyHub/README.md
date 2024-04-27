@@ -39,6 +39,10 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
+
+https://github.com/TaoLyn838/Web102-spring/assets/58400041/0f45812c-011c-4c15-82d8-c8f941c454f5
+
+
 ## Notes
 
 Describe any challenges encountered while building the app.
