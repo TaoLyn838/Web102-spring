@@ -2,7 +2,7 @@
 
 Submitted by: **Chengtao Lin**
 
-This web app: **HobbyHub**
+This web app: [**HobbyHub**](https://vercel.com/chengtaos-projects/web102-hobbyhub)
 
 Time spent: **12** hours spent in total
 
@@ -39,9 +39,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-
 https://github.com/TaoLyn838/Web102-spring/assets/58400041/0f45812c-011c-4c15-82d8-c8f941c454f5
-
 
 ## Notes
 
