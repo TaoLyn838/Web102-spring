@@ -47,7 +47,7 @@ const CreatePost = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-4 py-6 bg-gray-900 rounded-lg">
       <form className="grid grid-cols-1 gap-6" onSubmit={createPost}>
         <input
           type="text"
