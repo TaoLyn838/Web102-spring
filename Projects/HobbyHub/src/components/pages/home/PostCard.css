@@ -10,8 +10,8 @@
   @apply flex items-center justify-between;
 }
 
-.postcard-username {
-  @apply text-lg font-semibold text-gray-900;
+.postcard-author {
+  @apply text-lg font-bold text-gray-900;
 }
 
 .postcard-date {
@@ -30,4 +30,7 @@
 .postcard-category,
 .postcard-comment {
   @apply flex mr-2 text-gray-700 text-sm;
+}
+.postcard-title {
+  @apply flex text-gray-700 font-semibold;
 }

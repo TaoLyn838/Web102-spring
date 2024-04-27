@@ -9,8 +9,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Pages.Home />} />
-          <Route path="/post:id" element={<Pages.Post />} />
           <Route path="/post/create" element={<Pages.CreatePost />} />
+          <Route path="/post/:id" element={<Pages.Post />} />
+          <Route path="/post/:id/edit" element={<Pages.EditPost />} />
         </Route>
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>

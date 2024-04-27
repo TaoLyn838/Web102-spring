@@ -1,28 +1,29 @@
-import React, { useState } from 'react'
 import './SearchBar.css'
-import { Search } from './Icons'
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState('')
-
+const SearchBar = ({
+  SearchIcon,
+  selectedTitle,
+  setSelectedTitle,
+  onSearchClick,
+}) => {
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value)
-    // Perform search logic here
+    setSelectedTitle(e.target.value)
   }
 
   return (
     <div className="searchbar-container">
       <div className="grid searchbar-title">
-        <Search />
+        <button className="searchbar-button" onClick={onSearchClick}>
+          <SearchIcon />
+        </button>
       </div>
       <input
         className="peer searchbar-input pr-2"
         type="text"
         placeholder="Search..."
-        value={searchTerm}
+        value={selectedTitle}
         onChange={handleSearch}
       />
-      {/* Render search results or other components based on search term */}
     </div>
   )
 }

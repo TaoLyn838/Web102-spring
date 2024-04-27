@@ -7,6 +7,7 @@ const Pages = {
   Home,
   Post,
   CreatePost,
+  EditPost,
 }
 
 export default Pages

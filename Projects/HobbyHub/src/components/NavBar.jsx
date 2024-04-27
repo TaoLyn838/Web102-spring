@@ -4,7 +4,7 @@ import SearchBar from './SearchBar'
 import './NavBar.css'
 import Icons from './Icons'
 
-const NavBar = () => {
+const NavBar = ({ selectedTitle, setSelectedTitle, onSearchClick }) => {
   return (
     <header className="navbar-header">
       <div className="flex items-center">
@@ -21,7 +21,12 @@ const NavBar = () => {
         </nav>
       </div>
       <div className="flex items-center">
-        <SearchBar />
+        <SearchBar
+          SearchIcon={Icons.Search}
+          selectedTitle={selectedTitle}
+          setSelectedTitle={setSelectedTitle}
+          onSearchClick={onSearchClick}
+        />
         <button className="ml-4" variant="outline"></button>
         <div className="ml-4">
           <Icons.User />

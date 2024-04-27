@@ -1,4 +1,4 @@
-export const LikeCount = () => {
+export const LikeCountIcon = () => {
   return (
     <svg
       fill="none"
@@ -16,7 +16,7 @@ export const LikeCount = () => {
   )
 }
 
-export const Comments = () => {
+export const CommentsIcon = () => {
   return (
     <svg
       fill="none"
@@ -34,7 +34,7 @@ export const Comments = () => {
   )
 }
 
-export const Category = () => {
+export const CategoryIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export const Category = () => {
   )
 }
 
-export const User = () => {
+export const UserIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ export const User = () => {
   )
 }
 
-export const Home = () => {
+export const HomeIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ export const Home = () => {
   )
 }
 
-export const NewPost = () => {
+export const NewPostIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ export const NewPost = () => {
   )
 }
 
-export const Search = () => {
+export const SearchIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -137,14 +137,99 @@ export const Search = () => {
     </svg>
   )
 }
+
+export const AttachFileIcon = () => {
+  return (
+    <svg
+      className="w-4 h-4"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 12 20"
+    >
+      <path
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M1 6v8a5 5 0 1 0 10 0V4.5a3.5 3.5 0 1 0-7 0V13a2 2 0 0 0 4 0V6"
+      />
+    </svg>
+  )
+}
+
+export const UploadImageIcon = () => {
+  return (
+    <svg
+      className="w-4 h-4"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 16 20"
+    >
+      <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z" />
+      <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+    </svg>
+  )
+}
+
+export const EditIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-edit"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+      <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+      <path d="M16 5l3 3" />
+    </svg>
+  )
+}
+
+export const DeleteIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-trash"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M4 7l16 0" />
+      <path d="M10 11l0 6" />
+      <path d="M14 11l0 6" />
+      <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+      <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+    </svg>
+  )
+}
+
 const Icons = {
-  LikeCount,
-  Comments,
-  Category,
-  User,
-  Home,
-  NewPost,
-  Search,
+  LikeCount: LikeCountIcon,
+  Comments: CommentsIcon,
+  Category: CategoryIcon,
+  User: UserIcon,
+  Home: HomeIcon,
+  NewPost: NewPostIcon,
+  Search: SearchIcon,
+  AttachFile: AttachFileIcon,
+  UploadImage: UploadImageIcon,
+  Edit: EditIcon,
+  Delete: DeleteIcon,
 }
 
 export default Icons
