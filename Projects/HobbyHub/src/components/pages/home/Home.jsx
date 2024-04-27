@@ -23,12 +23,12 @@ const Home = () => {
   return (
     <div className=" grid grid-cols-1  bg-gray-100 dark:bg-gray-800">
       <select
-        className="py-2 px-4 border border-gray-300 rounded-lg text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="py-2 px-2 border font-mono border-gray-300 rounded-lg text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         value={sortingOption}
         onChange={handleSortingChange}
       >
         <option value="created_at">Sort by Created At</option>
-        <option value="likeCount">Sort by Like Count</option>
+        <option value="likeCount">Sort by Up Votes</option>
       </select>
       {sortedPosts.map((post) => (
         <div className="container mx-auto px-4 py-1" key={post.id}>
