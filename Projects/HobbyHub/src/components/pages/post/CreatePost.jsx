@@ -16,6 +16,8 @@ const CreatePost = () => {
   const [selectedImage, setSelectedImage] = useState(null)
 
   const createPost = async (event) => {
+    event.preventDefault()
+
     if (
       post.title === '' ||
       post.author === '' ||
@@ -26,7 +28,6 @@ const CreatePost = () => {
       alert('Please fill out all fields')
       window.location = '/post/create'
     }
-    event.preventDefault()
     const { data, error } = await supabase.from('Posts').insert([
       {
         uid: post.uid,
