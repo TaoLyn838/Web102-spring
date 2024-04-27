@@ -31,8 +31,8 @@ const Home = () => {
         <option value="likeCount">Sort by Like Count</option>
       </select>
       {sortedPosts.map((post) => (
-        <div className="container mx-auto px-4 py-6">
-          <Link to={`/post/${post.uid}`} key={post.uid}>
+        <div className="container mx-auto px-4 py-1" key={post.id}>
+          <Link to={`/post/${post.uid}`} key={post.id}>
             <PostCard key={post.id} post={post} />
           </Link>
         </div>
