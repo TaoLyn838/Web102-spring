@@ -42,7 +42,7 @@ const Post = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-6 bg-gray-900 text-white">
+      <div className="container mx-auto px-4 py-6 bg-gray-900 text-white rounded-lg">
         {post && (
           <div className="p-6 bg-gray-800 rounded-lg shadow-lg mb-6">
             <h1 className="text-2xl font-bold text-left mb-4">Title</h1>
