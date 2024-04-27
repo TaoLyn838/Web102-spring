@@ -26,7 +26,7 @@ const CreatePost = () => {
       post.description === ''
     ) {
       alert('Please fill out all fields')
-      window.location = '/post/create'
+      return
     }
     const { data, error } = await supabase.from('Posts').insert([
       {
