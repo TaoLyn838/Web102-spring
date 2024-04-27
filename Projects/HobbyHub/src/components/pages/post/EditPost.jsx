@@ -47,7 +47,7 @@ const EditPost = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-6 bg-gray-900 text-white">
+    <div className="container rounded-e-lg mx-auto px-4 py-6 bg-gray-900 text-white">
       {post && (
         <div className="p-6 bg-gray-800 rounded-lg shadow-lg mb-6">
           {/* Title */}
