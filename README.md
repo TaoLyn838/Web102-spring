@@ -19,4 +19,6 @@ In the last three weeks of the course, you will apply your skills to design and 
 8. ### *[HobbyHub](https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/HobbyHub)*
 
 ## Certificate
-[![Chengtao Lin Certificate](https://github.com/TaoLyn838/Web102-spring/blob/main/Chengtao%20Lin.png)](https://github.com/TaoLyn838/Web102-spring/blob/main/Chengtao%20Lin.pdf)
+<a href="https://github.com/TaoLyn838/Web102-spring/blob/main/Chengtao%20Lin.pdf">
+  <img src="https://github.com/TaoLyn838/Web102-spring/blob/main/Chengtao%20Lin.png" alt="Chengtao Lin Certificate" width="600" height="400">
+</a>
