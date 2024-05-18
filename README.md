@@ -7,7 +7,7 @@ In the first part of the course, you will build your web development skills by c
 
 In the last three weeks of the course, you will apply your skills to design and build an original web app from the ground up. The course culminates in a Demo Day event where each team will present their finished web app in a live demo.
 
-## Projects
+## 👨‍💻 Projects
 
 1. ### *[Community Board](https://github.com/TaoLyn838/Web102-spring/blob/main/Projects/communityboard)*
 2. ### *[Flashcards! Part 1](https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/flashcards)*
@@ -18,5 +18,5 @@ In the last three weeks of the course, you will apply your skills to design and 
 7. ### *[Crewmates](https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/Crewmate)*
 8. ### *[HobbyHub](https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/HobbyHub)*
 
-## Certificate
+## 🏆 Certificate
 ![ChengtaoLin-1](https://github.com/TaoLyn838/Web102-spring/assets/58400041/5bf70ccf-f8e4-4bd7-b618-6940f3bb781f)
