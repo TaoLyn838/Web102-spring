@@ -17,3 +17,6 @@ In the last three weeks of the course, you will apply your skills to design and 
 6. ### *[Data Dashboard Part 2](https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/Datadashboards/Part-two/datadashboard)*
 7. ### *[Crewmates](https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/Crewmate)*
 8. ### *[HobbyHub](https://github.com/TaoLyn838/Web102-spring/tree/main/Projects/HobbyHub)*
+
+## Certificate
+[Chengtao Lin.pdf](https://github.com/TaoLyn838/Web102-spring/files/15359860/Chengtao.Lin.pdf)
